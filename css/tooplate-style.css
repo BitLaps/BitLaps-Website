@@ -10,7 +10,8 @@ https://www.tooplate.com/view/2115-marvel
 @import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,700");
 body {
   font-family: "Maven Pro", sans-serif;
-  padding-top: 70px;
+/*	Removing the white space from the header and body of the site 16 Aug 2025
+  padding-top: 70px;*/
 }
 
 
@@ -572,4 +573,5 @@ b, strong {
 
 .subtext{
   color:rgb(17, 57, 97);
+
 }
