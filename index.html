@@ -1,785 +1,862 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="BitLaps - Corporate IT Lab bridging learning and real-world solutions">
+    <meta name="author" content="BitLaps">
+    <title>BitLaps | Corporate IT Lab</title>
 
-    <title>BitLabs Website</title>
-
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/unicons.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
-
-    <!-- MAIN STYLE -->
     <link rel="stylesheet" href="css/tooplate-style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        /* ========== INVESTEC-INSPIRED CORPORATE STYLE ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Inter', -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff;
+            color: #1a1f2e;
+            line-height: 1.5;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+
+        /* HEADER / NAVIGATION */
+        .corporate-nav {
+            background: #ffffff;
+            border-bottom: 1px solid #e8ecef;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-area img {
+            height: 48px;
+            width: auto;
+        }
+
+        .logo-divider {
+            width: 1px;
+            height: 32px;
+            background: #d0d5dd;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 500;
+            color: #0a2540;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e4e;
+            font-size: 15px;
+            font-weight: 450;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #0052cc;
+        }
+
+        .btn-outline-corp {
+            border: 1px solid #0052cc;
+            background: transparent;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #0052cc;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .btn-outline-corp:hover {
+            background: #0052cc;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero-corporate {
+            background: #fafbfc;
+            padding: 80px 0;
+            border-bottom: 1px solid #eef2f4;
+        }
+
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #0052cc;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 1.2;
+            color: #0a2540;
+            margin-bottom: 24px;
+        }
+
+        .hero-title span {
+            font-weight: 600;
+            color: #0052cc;
+        }
+
+        .hero-description {
+            font-size: 17px;
+            color: #4a5b6e;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .stats-row {
+            display: flex;
+            gap: 48px;
+            margin-top: 32px;
+        }
+
+        .stat-block .stat-number {
+            font-size: 36px;
+            font-weight: 500;
+            color: #0a2540;
+        }
+
+        .stat-block .stat-label {
+            font-size: 13px;
+            color: #6b7a8a;
+            letter-spacing: 0.5px;
+        }
+
+        /* Section common */
+        .section-corporate {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 70px 40px;
+            border-bottom: 1px solid #eef2f4;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 500;
+            color: #0a2540;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            color: #5a6e7c;
+            max-width: 700px;
+            margin-bottom: 48px;
+        }
+
+        /* SIGS Accordion */
+        .sigs-accordion {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 8px;
+        }
+
+        .accordion-item-corp {
+            background: white;
+            border-radius: 16px;
+            margin-bottom: 12px;
+            border: 1px solid #eef2f4;
+            overflow: hidden;
+        }
+
+        .accordion-header-corp {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 28px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .accordion-header-corp:hover {
+            background: #fafbfc;
+        }
+
+        .accordion-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: #0a2540;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .accordion-icon {
+            font-size: 24px;
+        }
+
+        .chevron-icon {
+            color: #8a9aa8;
+            font-size: 18px;
+            transition: transform 0.25s ease;
+        }
+
+        .accordion-item-corp.open .chevron-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease-out;
+            background: #ffffff;
+            border-top: 1px solid transparent;
+        }
+
+        .accordion-item-corp.open .accordion-content {
+            max-height: 800px;
+            border-top-color: #eef2f4;
+        }
+
+        /* MEMBER TILES (with images & social links) */
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            padding: 28px;
+        }
+
+        .member-tile {
+            background: #ffffff;
+            border: 1px solid #eef2f4;
+            border-radius: 20px;
+            padding: 20px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .member-tile:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            border-color: #d0d9e2;
+        }
+
+        .member-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #f0f4f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: #8a9aa8;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .member-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-details {
+            flex: 1;
+        }
+
+        .member-name {
+            font-weight: 600;
+            font-size: 16px;
+            color: #0a2540;
+            margin-bottom: 4px;
+        }
+
+        .member-role {
+            font-size: 12px;
+            color: #6c7e8f;
+            margin-bottom: 8px;
+        }
+
+        .member-social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 6px;
+        }
+
+        .member-social-links a {
+            color: #8a9aa8;
+            font-size: 18px;
+            transition: color 0.2s;
+        }
+
+        .member-social-links a:hover {
+            color: #0052cc;
+        }
+
+        /* Projects grid */
+        .projects-grid-corp {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 16px;
+        }
+
+        .project-card-corp {
+            border: 1px solid #eef2f4;
+            border-radius: 20px;
+            padding: 28px;
+            transition: all 0.2s;
+            background: white;
+            cursor: pointer;
+        }
+
+        .project-card-corp:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+            border-color: #d0d9e2;
+        }
+
+        .project-icon {
+            width: 56px;
+            height: 56px;
+            background: #f0f4f9;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .project-icon img {
+            max-width: 40px;
+        }
+
+        .project-card-corp h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .project-meta {
+            font-size: 13px;
+            color: #0052cc;
+            margin-top: 16px;
+        }
+
+        /* History section */
+        .history-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .history-text p {
+            color: #4a5b6e;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .timeline-link {
+            color: #0052cc;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Contact section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .contact-info-item {
+            margin-bottom: 24px;
+        }
+
+        .contact-info-item h4 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #0a2540;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #d0d9e2;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        .btn-primary-corp {
+            background: #0a2540;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-primary-corp:hover {
+            background: #0052cc;
+        }
+
+        footer {
+            background: #fafbfc;
+            padding: 48px 40px;
+            text-align: center;
+            color: #6b7a8a;
+            font-size: 14px;
+            border-top: 1px solid #eef2f4;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .hero-container, .projects-grid-corp, .history-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-title {
+                font-size: 36px;
+            }
+            .section-corporate {
+                padding: 50px 24px;
+            }
+            .members-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-    <!-- MENU -->
-    <nav class="navbar navbar-expand-sm navbar-light">
-        <div class="container">
-            <!-- Brand with logo and text -->
-            <a class="navbar-brand d-flex align-items-center" href="https://www.eduvos.com/" target="_blank">
-                <img src="images/project/eduvoslogo(1).png" alt="Your Logo" class="navbar-logo" width="250"
-                    height="250">
-                <img src="images/project/secondSlogan.png" alt="Your Logo" class="navbar-logo">
-            </a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                <span class="navbar-toggler-icon"></span>
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link"><span data-hover="About">About</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#project" class="nav-link"><span data-hover="The team">Meet the team</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#our-projects" class="nav-link"><span data-hover="Our projects">Our projects</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link"><span data-hover="Contact">Contact</span></a>
-                    </li>
-                </ul>
+    <!-- CORPORATE NAVIGATION -->
+    <nav class="corporate-nav">
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="images/project/eduvoslogo(1).png" alt="Eduvos">
+                <div class="logo-divider"></div>
+                <span class="logo-text">BitLaps</span>
+            </div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#sigs">Special Interest Groups</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <button class="btn-outline-corp" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Collaborate</button>
             </div>
         </div>
     </nav>
 
-    <!-- ABOUT -->
-    <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
-                    <div class="about-text">
-                        <small class="small-text">Welcome to <span class="mobile-block">the BitLaps
-                                website</span></small>
-                        <h1 class="animated animated-text">
-                            <span class="mr-2">Hello everyone, we are the </span>
-                            <div class="animated-info">
-                                <span class="animated-item">BitLaps Lab</span>
-                                <span class="animated-item">developers</span>
-                                <span class="animated-item">future of IT</span>
-                            </div>
-                        </h1>
-
-                        <!--Bridging Information Technology Learning and Application through Project-based Solutions.
--->
-                        <p class="subtext"><b>Bridging Information Technology Learning and Application through
-                                Project-based Solutions.</b></p>
-                        <p>
-                            Welcome to BitLaps, a dynamic community of passionate IT students dedicated to transforming
-                            classroom knowledge into real-world solutions. As an innovative tech club, we thrive on
-                            solving complex challenges by applying cutting-edge technology and creative problem-solving
-                            skills.
-
-                            At BitLaps, we believe in learning by doing. Our members are known for their academic
-                            excellence, consistently excelling in different areas of tech. Beyond academics, we seek to
-                            collaborate on projects that address real-life problems, bridging the gap between theory and
-                            practical application.
-
-
-                            We are more than just students—we are future tech leaders, building solutions today that
-                            will shape tomorrow.
-
-                            Join us as we push boundaries, develop innovative solutions, and turn ideas into reality!
-                        </p>
-
-                        <!--div class="custom-btn-group mt-4">
-                          <a href="#" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Download Resume</a>
-                          <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">Get a free quote</a>
-                        </div-->
-                    </div>
+    <!-- HERO SECTION -->
+    <section class="hero-corporate">
+        <div class="hero-container">
+            <div>
+                <div class="hero-badge">Bridging IT Learning & Application</div>
+                <h1 class="hero-title">Building <span>real-world solutions</span> since 2025</h1>
+                <p class="hero-description">BitLaps is a corporate-ready tech lab where students transform academic knowledge into production-grade applications, ethical research, and industry innovation.</p>
+                <div class="stats-row">
+                    <div class="stat-block"><div class="stat-number">2025</div><div class="stat-label">Founded</div></div>
+                    <div class="stat-block"><div class="stat-number">4</div><div class="stat-label">Active SIGs</div></div>
+                    <div class="stat-block"><div class="stat-number">14+</div><div class="stat-label">Members</div></div>
                 </div>
-
-                <div class="col-lg-5 col-md-12 col-12">
-                    <div class="about-image svg">
-                        <img src="images/project/logo4.png" class="img-fluid" alt="svg image" width="350" height="350">
-                    </div>
-                </div>
-
+            </div>
+            <div style="text-align: right;">
+                <img src="images/project/logo4.png" alt="BitLaps emblem" style="max-width: 280px; opacity: 0.9;">
             </div>
         </div>
     </section>
 
-    <!-- TEAM MEMBERS SECTION -->
-    <section class="project py-5" id="project">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2>Our Team Members</h2>
-                </div>
+    <!-- ABOUT / HISTORY SECTION -->
+    <section class="section-corporate" id="about">
+        <div class="history-grid">
+            <div class="history-text">
+                <h2 class="section-title" style="margin-bottom: 24px;">Our history</h2>
+                <p>Founded as a student-led initiative at Eduvos Mbombela Campus in early 2025, BitLabs was created to bridge the gap between theoretical IT education and practical, real-world problem solving.</p>
+                <p>What started as a small group of passionate developers has grown strategically into an organised tech lab with four Special Interest Groups, delivering impactful solutions for both academic and industry challenges.</p>
+                <p>Today, BitLabs is recognised for its commitment to enduring worth — combining technical excellence, ethical research, and personalised mentorship to shape future IT leaders.</p>
+                <a href="#sigs" class="timeline-link">Discover our SIGs →</a>
             </div>
-
-            <div class="slider-container">
-                <button class="prev-btn" onclick="prevSlide()">&#10094;</button>
-
-                <div class="slider">
-                    <!-- Team Member 01 -->
-                    <div class="slide">
-                        <div class="team-card">
-                            <img src="images/project/mordi.png" width="250" height="250">
-                            <div class="team-info">
-                                <h3>Emmanual Mordi</h3>
-                                <p>Pioneer <a href="https://www.linkedin.com/in/emmanuel-mordi-76622927/"
-                                        target="_blank"><i class="fa fa-linkedin-square"
-                                            style="font-size:24px;color:blue"></i></a> <a
-                                        href="https://github.com/ifymordi79" target="_blank"><i
-                                            class="fa fa-github-square" style="font-size:24px;color:purple"></i></a> <i
-                                        class="fa fa-envelope" style="font-size:24px;color:rgb(255, 103, 103)"></i>:
-                                    Emmanual.Mordi@eduvos.com
-                                </p>
-                                <p>
-                                    As the pioneer of the BitLaps team, Mr. Mordi is a visionary
-                                    leader dedicated to innovation and excellence. He seeks the
-                                    benefit and guidance of the group, fostering collaboration and
-                                    growth. His leadership drives the team toward new opportunities
-                                    and continuous progress.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Team Member 02 -->
-                    <div class="slide">
-                        <div class="team-card">
-                            <img src="images/project/justice.jpg" width="250" height="250">
-                            <div class="team-info">
-                                <h3>Todani Justice Thovhogi</h3>
-                                <p>Co-Pioneer</p>
-                                <p>
-                                    As the co-pioneer of the BitLaps team, Mr. Justice plays
-                                    a crucial role in guiding and supporting the group's
-                                    mission. With a commitment to teamwork and development, he
-                                    strives to ensure the success of every member, contributing
-                                    to a culture of learning, innovation, and achievement.
-                                </p>
-
-                                <!--a href="https://www.linkedin.com/in/bryan-mametja-4a428b294/" target="_blank"><i class="fa fa-linkedin-square" style="font-size:24px;color:blue"></i></a> | <a href="https://github.com" target="_blank"><i class="fa fa-github-square" style="font-size:24px;color:blue"></i></a-->
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Team Member 1 -->
-                    <div class="slide active">
-                        <div class="team-card">
-                            <img src="images/project/Bryan2.png" class="img-fluid" alt="svg image">
-                            <div class="team-info">
-                                <h3>Bryan Mametja</h3>
-                                <p>President <a href="https://www.linkedin.com/in/bryan-mametja-4a428b294/"
-                                        target="_blank"><i class="fa fa-linkedin-square"
-                                            style="font-size:24px;color:blue"></i></a> <a href="https://github.com"
-                                        target="_blank"><i class="fa fa-github-square"
-                                            style="font-size:24px;color:purple"></i></a></p>
-                                <p>
-                                    Bryan Mametja serves as the President of BitLaps, stepping into
-                                    the role after a successful term as Vice President last year.
-                                    A 3rd Data Science student, he brings both leadership
-                                    experience and technical insight to his position at the helm
-                                    of the organization. Steering BitLaps toward continued growth.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Team member 2-->
-                    <div class="slide">
-                        <div class="team-card">
-                            <img src="images/project/zenande.jpg" class="img-fluid" alt="svg image">
-                            <div class="team-info">
-                                <h3>Zenande Khoza</h3>
-                                <p>Vice President <a href="https://github.com/nevertrustacow" target="_blank"><i
-                                            class="fa fa-github-square"
-                                            style="font-size:24px;color:rgb(95, 2, 95)"></i></a> </p>
-                                <p>
-                                    A 3rd year Data Science student and team Vice President,
-                                    Zenande is known for her academic excellence, ranking
-                                    among the top achievers at Mbombela Campus. She ensures
-                                    efficiency and organization within the team
-                                    while contributing her expertise to technical
-                                    discussions. Her dedication and leadership help maintain the
-                                    Labs productivity and structure.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Team member 3-->
-                    <div class="slide">
-                        <div class="team-card">
-                            <img src="images/project/person1.jpg" class="img-fluid" alt="svg image">
-                            <div class="team-info">
-                                <h3>Verushka Sambo</h3>
-                                <p>Team Secretary <a href="https://www.linkedin.com/in/veruschka-sambo-514058222/"
-                                        target="_blank"><i class="fa fa-linkedin-square"
-                                            style="font-size:24px;color:blue"></i></a> </p>
-                                <p>
-                                    Verushka Sambo is the dedicated Secretary of BitLaps,
-                                    seamlessly balancing her leadership role with her rigorous
-                                    studies as a 3rd Data Science student. On campus, she is
-                                    a familiar and welcoming presence who ensures our organization
-                                    runs smoothly behind the scenes. In addition to her organizational
-                                    expertise, Verushka is a compelling voice at our events, where she
-                                    confidently bridges the gap between technical concepts and our
-                                    community, sharing insights from her academic journey in data science.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Team member 3-->
-                    <div class="slide">
-                        <div class="team-card">
-                            <img src="images/project/khula_ndz.jpg" class="img-fluid" alt="svg image" width="250" height="250">
-                            <div class="team-info">
-                                <h3>Khula Ndzinisa</h3>
-                                <p>SIG IADS Lead <a href="https://www.linkedin.com/in/khula-ndzinisa-5792a9253/"
-                                        target="_blank"><i class="fa fa-linkedin-square"
-                                            style="font-size:24px;color:blue"></i></a> <a
-                                        href="https://github.com/cosy990707" target="_blank"><i
-                                            class="fa fa-github-square" style="font-size:24px;color:purple"></i></a></p>
-                                <p>
-                                    Khula Ndzinisa leads the Innovation & Application Development Special Interest Group
-                                    (SIG) at BitLaps, where he channels his extensive technical background into driving
-                                    cutting-edge projects. Currently a third-year Data Science student, Khula previously
-                                    completed a certificate in Software Engineering, giving him a unique blend of
-                                    foundational
-                                    development skills
-                                    and advanced analytical expertise. With his hands-on experience and passion for
-                                    building
-                                    impactful solutions, he plays a pivotal role in guiding members through the
-                                    practical aspects of
-                                    turning ideas into reality.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Team Member 4 -->
-                    <div class="slide">
-                        <div class="team-card">
-                            <img src="images/project/mcneil2.png">
-                            <div class="team-info">
-                                <h3>McNeil Maseko</h3>
-                                <p>SIG IADS Developer <a href="https://www.linkedin.com/in/mcneil-maseko-586716201/"
-                                        target="_blank"><i class="fa fa-linkedin-square"
-                                            style="font-size:24px;color:blue"></i></a> <a
-                                        href="https://github.com/Kim-Haruno" target="_blank"><i
-                                            class="fa fa-github-square"
-                                            style="font-size:24px;color:rgb(95, 2, 95)"></i></a> </p>
-                                <p>
-                                    A 3rd year Software Engineering student passionate about cybersecurity and
-                                    web development. As a developer, he ensures secure and efficient code,
-                                    specializing in web applications and network security. His ability to analyze
-                                    threats and implement safeguards makes him a valuable asset in creating secure
-                                    software solutions for the Lab.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Team Member 5 -->
-                    <div class="slide">
-                        <div class="team-card">
-                            <img src="images/project/saad.png" class="img-fluid" alt="svg image">
-                            <div class="team-info">
-                                <h3>Saad Sarfraz</h3>
-                                <p>SIG IADS Developer <a href="https://www.linkedin.com/in/saad-sarfraz-b56b5331a/"
-                                        target="_blank"><i class="fa fa-linkedin-square"
-                                            style="font-size:24px;color:blue"></i></a> <a
-                                        href="https://github.com/Saad-7117" target="_blank"><i
-                                            class="fa fa-github-square"
-                                            style="font-size:24px;color:rgb(95, 2, 95)"></i></a> </p>
-                                <p>
-                                    A 3rd Software Engineering student and developer with a strong
-                                    background in software development. His participation in hackathons has
-                                    honed his ability to solve complex coding challenges. Saad is passionate
-                                    about optimizing algorithms, improving user experiences, and building
-                                    scalable applications, contributing significantly to the Labs technical
-                                    capabilities.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="slide">
-                        <div class="team-card">
-                            <img src="images/project/phumi3.jpg" class="img-fluid" alt="svg image">
-                            <div class="team-info">
-                                <h3>Phumlile Nyalunga</h3>
-                                <p>SIG IADS Developer <a href="https://www.linkedin.com/in/phumlile-nyalunga-661b00353/"
-                                        target="_blank"><i class="fa fa-linkedin-square"
-                                            style="font-size:24px;color:blue"></i></a> <a
-                                        href="https://github.com/phumlile-nyalunga" target="_blank"><i
-                                            class="fa fa-github-square"
-                                            style="font-size:24px;color:rgb(95, 2, 95)"></i></a> </p>
-                                <p>
-                                    Phumlile Nyalunga is a valued member of the Special Interest Group (SIG) at BitLaps,
-                                    where she channels her at BitLaps.
-                                    A 3rd Robotics student, she brings a unique perspective to
-                                    the team, blending her expertise in automation and intelligent
-                                    systems with a passion for nurturing new talent. Phumlile contributes
-                                    to workshops and development initiatives that help members build
-                                    foundational skills, drawing from her hands-on experience in
-                                    robotics to inspire innovative thinking and practical problem-solving.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Team member 4-->
-                    <div class="slide">
-                        <div class="team-card">
-                            <img src="images/project/busisiwe2.jpg" class="img-fluid" alt="svg image">
-                            <div class="team-info">
-                                <h3>Busisiwe Buhle Sibande</h3>
-                                <p>SIG REI Lead <a href="https://www.linkedin.com/in/busisiwe-buhle-sibande-b63761225/"
-                                        target="_blank"><i class="fa fa-linkedin-square"
-                                            style="font-size:24px;color:blue"></i></a>
-                                <p>
-                                    Busisiwe Buhle Sibande leads the Research, Ethics & Industry
-                                    Special Interest Group (SIG) at BitLaps. A 3rd BCom
-                                    Commerce student, she brings a strong business perspective
-                                    to the intersection of technology and responsible practice.
-                                    Busisiwe focuses on guiding members through ethical considerations,
-                                    industry trends, and meaningful research that bridges the gap
-                                    between academia and the professional world.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="slide">
-                        <div class="team-card">
-                            <img src="images/project/shamiso3.jpg" class="img-fluid" alt="svg image">
-                            <div class="team-info">
-                                <h3>Tavarwisa Shamiso</h3>
-                                <p>SIG REI researcher
-                                    <!--a href="https://www.linkedin.com/in/khula-ndzinisa-5792a9253/" target="_blank"><i class="fa fa-linkedin-square" style="font-size:24px;color:blue"></i></a-->
-                                <p>
-                                    Tavarwisa Shamiso is an active member of the Research,
-                                    Ethics & Industry Special Interest Group (SIG) at BitLaps,
-                                    a 2nd year data science she contributes her technical expertise to meaningful
-                                    discussions and initiatives. As a data science student,
-                                    she brings a strong foundation in development practices and a
-                                    keen understanding of how technology intersects with ethical
-                                    responsibility. Tavarwisa plays a key role in the SIG's research
-                                    efforts, helping to explore industry trends and promote
-                                    responsible innovation that bridges the gap between technical
-                                    execution and real-world impact.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Team member 5-->
-                    <div class="slide">
-                        <div class="team-card">
-                            <img src="images/project/kgomotso.jpg" class="img-fluid" alt="svg image">
-                            <div class="team-info">
-                                <h3>Kgomotso Katlego Magopane</h3>
-                                <p>SIG LIMD Lead
-                                    <!--a href="https://www.linkedin.com/in/khula-ndzinisa-5792a9253/" target="_blank"><i class="fa fa-linkedin-square" style="font-size:24px;color:blue"></i></a-->
-                                <p>
-                                    Kgomotso Katlego Magopane leads the Learning, Induction & Member
-                                    Development Special Interest Group (SIG) at BitLaps.
-                                    A 2nd Data Science student, she is passionate about
-                                    helping new members grow and succeed within the organization.
-                                    Kgomotso focuses on creating a welcoming environment and
-                                    providing the resources needed to build foundational skills
-                                    and confidence.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <div class="slide">
-                        <div class="team-card">
-                            <img src="images/project/person1.jpg" class="img-fluid" alt="svg image">
-                            <div class="team-info">
-                                <h3>Sinomuzi Unathi Sibiya</h3>
-                                <p>SIG LIMD member
-                                    <!--a href="https://www.linkedin.com/in/khula-ndzinisa-5792a9253/" target="_blank"><i class="fa fa-linkedin-square" style="font-size:24px;color:blue"></i></a-->
-                                <p>
-                                    Sinomuzi Unathi Sibiya is a dedicated member of the Learning,
-                                    Induction & Member Development Special Interest Group (SIG) at
-                                    BitLaps. A 3rd Software Engineering student, he combines
-                                    his technical background with a passion for helping others build
-                                    their skills and confidence. Sinomuzi plays an active role in
-                                    guiding new members through their learning journey, contributing
-                                    to workshops and development initiatives that ensure every member
-                                    has the support they need to grow within the organization.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <button class="next-btn" onclick="nextSlide()">&#10095;</button>
+            <div class="history-text">
+                <h2 class="section-title" style="margin-bottom: 24px;">About us</h2>
+                <p>BitLaps is more than a club — it's an innovation lab. We believe in learning by doing. Our members excel academically and collaborate on projects that solve actual problems, from AI summarizers to data dashboards.</p>
+                <p>We focus on four core pillars: Leadership, Innovation & Application Development, Research & Ethics, and Learner Induction. Each SIG operates with corporate-grade standards, ensuring members graduate with portfolios that reflect real engineering capability.</p>
+                <a href="#projects" class="timeline-link">View our project portfolio →</a>
             </div>
+        </div>
     </section>
 
-    <!-- Custom CSS -->
-    <style>
-        /* Ensure the logo and text are aligned properly */
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-            /* Align logo and text vertically */
-        }
+    <!-- SIGS SECTION - with MEMBER TILES (images + socials) -->
+    <section class="section-corporate" id="sigs">
+        <h2 class="section-title">Special Interest Groups</h2>
+        <p class="section-subtitle">Structured around expertise areas — each SIG drives research, development, and leadership.</p>
+        
+        <div class="sigs-accordion">
+            <!-- SIG 1: Leadership -->
+            <div class="accordion-item-corp">
+                <div class="accordion-header-corp" onclick="toggleAccordion(this)">
+                    <div class="accordion-title">
+                        <span class="accordion-icon"></span> Leadership
+                    </div>
+                    <span class="chevron-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="members-grid">
+                        <!-- Emmanuel Mordi -->
+                        <div class="member-tile">
+                            <div class="member-avatar"><img src="images/project/mordi.png" alt="Emmanuel Mordi" onerror="this.src='https://via.placeholder.com/70?text=EM'"></div>
+                            <div class="member-details">
+                                <div class="member-name">Emmanuel Mordi</div>
+                                <div class="member-role">Pioneer</div>
+                                <div class="member-social-links">
+                                    <a href="https://www.linkedin.com/in/emmanuel-mordi-76622927/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    <a href="https://github.com/ifymordi79" target="_blank"><i class="fa fa-github"></i></a>
+                                    <a href="mailto:Emmanual.Mordi@eduvos.com"><i class="fa fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Todani Justice Thovhogi -->
+                        <div class="member-tile">
+                            <div class="member-avatar"><img src="images/project/justice.jpg" alt="Todani Justice" onerror="this.src='https://via.placeholder.com/70?text=TJ'"></div>
+                            <div class="member-details">
+                                <div class="member-name">Todani Justice Thovhogi</div>
+                                <div class="member-role">Co-Pioneer</div>
+                                <div class="member-social-links">
+                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    <a href="#"><i class="fa fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Bryan Mametja -->
+                        <div class="member-tile">
+                            <div class="member-avatar"><img src="images/project/Bryan2.png" alt="Bryan Mametja" onerror="this.src='https://via.placeholder.com/70?text=BM'"></div>
+                            <div class="member-details">
+                                <div class="member-name">Bryan Mametja</div>
+                                <div class="member-role">President</div>
+                                <div class="member-social-links">
+                                    <a href="https://www.linkedin.com/in/bryan-mametja-4a428b294/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    <a href="https://github.com" target="_blank"><i class="fa fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Zenande Khoza -->
+                        <div class="member-tile">
+                            <div class="member-avatar"><img src="images/project/zenande.jpg" alt="Zenande Khoza" onerror="this.src='https://via.placeholder.com/70?text=ZK'"></div>
+                            <div class="member-details">
+                                <div class="member-name">Zenande Khoza</div>
+                                <div class="member-role">Vice President</div>
+                                <div class="member-social-links">
+                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    <a href="https://github.com/nevertrustacow" target="_blank"><i class="fa fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Verushka Sambo -->
+                        <div class="member-tile">
+                            <div class="member-avatar"><img src="images/project/person1.jpg" alt="Verushka Sambo" onerror="this.src='https://via.placeholder.com/70?text=VS'"></div>
+                            <div class="member-details">
+                                <div class="member-name">Verushka Sambo</div>
+                                <div class="member-role">Secretary</div>
+                                <div class="member-social-links">
+                                    <a href="https://www.linkedin.com/in/veruschka-sambo-514058222/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        .navbar-logo {
-            height: 50px;
-            /* Adjust the logo size */
-            width: auto;
-            object-fit: contain;
-            margin-right: 6px;
-            /* Space between the logo and text */
-        }
+            <!-- SIG 2: Innovation & Application Development -->
+            <div class="accordion-item-corp">
+                <div class="accordion-header-corp" onclick="toggleAccordion(this)">
+                    <div class="accordion-title">
+                        <span class="accordion-icon"></span> Innovation & Application Development
+                    </div>
+                    <span class="chevron-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="members-grid">
+                        <div class="member-tile">
+                            <div class="member-avatar"><img src="images/project/khula_ndz.jpg" alt="Khula Ndzinisa" onerror="this.src='https://via.placeholder.com/70?text=KN'"></div>
+                            <div class="member-details">
+                                <div class="member-name">Khula Ndzinisa</div>
+                                <div class="member-role">SIG Lead</div>
+                                <div class="member-social-links">
+                                    <a href="https://www.linkedin.com/in/khula-ndzinisa-5792a9253/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    <a href="https://github.com/cosy990707" target="_blank"><i class="fa fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-tile">
+                            <div class="member-avatar"><img src="images/project/mcneil2.png" alt="McNeil Maseko" onerror="this.src='https://via.placeholder.com/70?text=MM'"></div>
+                            <div class="member-details">
+                                <div class="member-name">McNeil Maseko</div>
+                                <div class="member-role">Developer</div>
+                                <div class="member-social-links">
+                                    <a href="https://www.linkedin.com/in/mcneil-maseko-586716201/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    <a href="https://github.com/Kim-Haruno" target="_blank"><i class="fa fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-tile">
+                            <div class="member-avatar"><img src="images/project/saad.png" alt="Saad Sarfraz" onerror="this.src='https://via.placeholder.com/70?text=SS'"></div>
+                            <div class="member-details">
+                                <div class="member-name">Saad Sarfraz</div>
+                                <div class="member-role">Developer</div>
+                                <div class="member-social-links">
+                                    <a href="https://www.linkedin.com/in/saad-sarfraz-b56b5331a/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    <a href="https://github.com/Saad-7117" target="_blank"><i class="fa fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-tile">
+                            <div class="member-avatar"><img src="images/project/phumi3.jpg" alt="Phumlile Nyalunga" onerror="this.src='https://via.placeholder.com/70?text=PN'"></div>
+                            <div class="member-details">
+                                <div class="member-name">Phumlile Nyalunga</div>
+                                <div class="member-role">Developer</div>
+                                <div class="member-social-links">
+                                    <a href="https://www.linkedin.com/in/phumlile-nyalunga-661b00353/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    <a href="https://github.com/phumlile-nyalunga" target="_blank"><i class="fa fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        .navbar-text {
-            font-size: 30px;
-            /* Adjust text size */
-            font-weight: bold;
-            /* Make text bold */
-        }
+            <!-- SIG 3: Research & Innovation -->
+            <div class="accordion-item-corp">
+                <div class="accordion-header-corp" onclick="toggleAccordion(this)">
+                    <div class="accordion-title">
+                        <span class="accordion-icon"></span> Research & Innovation
+                    </div>
+                    <span class="chevron-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="members-grid">
+                        <div class="member-tile">
+                            <div class="member-avatar"><img src="images/project/busisiwe2.jpg" alt="Busisiwe Sibande" onerror="this.src='https://via.placeholder.com/70?text=BS'"></div>
+                            <div class="member-details">
+                                <div class="member-name">Busisiwe Buhle Sibande</div>
+                                <div class="member-role">SIG Lead</div>
+                                <div class="member-social-links">
+                                    <a href="https://www.linkedin.com/in/busisiwe-buhle-sibande-b63761225/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-tile">
+                            <div class="member-avatar"><img src="images/project/shamiso3.jpg" alt="Tavarwisa Shamiso" onerror="this.src='https://via.placeholder.com/70?text=TS'"></div>
+                            <div class="member-details">
+                                <div class="member-name">Tavarwisa Shamiso</div>
+                                <div class="member-role">Researcher</div>
+                                <div class="member-social-links">
+                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    <a href="#"><i class="fa fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        /* Slider Container */
-        .slider-container {
-            position: relative;
-            max-width: 800px;
-            margin: auto;
-            overflow: hidden;
-            background: #fff;
-            padding: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
+            <!-- SIG 4: Learner Induction & Development -->
+            <div class="accordion-item-corp">
+                <div class="accordion-header-corp" onclick="toggleAccordion(this)">
+                    <div class="accordion-title">
+                        <span class="accordion-icon"></span> Learner Induction & Development
+                    </div>
+                    <span class="chevron-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="members-grid">
+                        <div class="member-tile">
+                            <div class="member-avatar"><img src="images/project/kgomotso.jpg" alt="Kgomotso Magopane" onerror="this.src='https://via.placeholder.com/70?text=KM'"></div>
+                            <div class="member-details">
+                                <div class="member-name">Kgomotso Katlego Magopane</div>
+                                <div class="member-role">SIG Lead</div>
+                                <div class="member-social-links">
+                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-tile">
+                            <div class="member-avatar"><img src="images/project/person1.jpg" alt="Sinomuzi Sibiya" onerror="this.src='https://via.placeholder.com/70?text=SS'"></div>
+                            <div class="member-details">
+                                <div class="member-name">Sinomuzi Unathi Sibiya</div>
+                                <div class="member-role">Member Development</div>
+                                <div class="member-social-links">
+                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    <a href="#"><i class="fa fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        /* Slides */
-        .slider {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
+    <!-- PROJECTS SECTION -->
+    <section class="section-corporate" id="projects">
+        <h2 class="section-title">Our project portfolio</h2>
+        <p class="section-subtitle">Real-world applications developed by BitLaps teams, solving genuine industry and academic challenges.</p>
+        <div class="projects-grid-corp">
+            <div class="project-card-corp" onclick="window.open('https://bitlaps.github.io/BitLaps_summary_tool-2026-/', '_blank')">
+                <div class="project-icon"><img src="images/project/logo.png" alt="PDF tool" style="width: 36px;"></div>
+                <h3>PDF Summarizer</h3>
+                <p>AI-powered tool that condenses lengthy academic and business PDFs into intelligent summaries.</p>
+                <div class="project-meta">Python · NLP · Web</div>
+            </div>
+            <div class="project-card-corp" onclick="window.open('https://bitlaps.github.io/smart-study/', '_blank')">
+                <div class="project-icon"><img src="images/project/smart-study-logo.jpg" alt="Smart study" style="width: 36px; border-radius: 8px;"></div>
+                <h3>Smart Study WebApp</h3>
+                <p>Interactive platform with gamified learning, progress tracking, and adaptive flashcards.</p>
+                <div class="project-meta">React · Firebase</div>
+            </div>
+            <div class="project-card-corp">
+                <div class="project-icon"><img src="images/project/eduvoslogo(1).png" alt="Analytics" style="width: 32px;"></div>
+                <h3>Industry Analytics Dashboard</h3>
+                <p>Real-time data visualization for local enterprises, providing business intelligence insights.</p>
+                <div class="project-meta">PowerBI · Python</div>
+            </div>
+        </div>
+    </section>
 
-        .slide {
-            min-width: 100%;
-            display: none;
-        }
+    <!-- GOALS + MISSION -->
+    <section class="section-corporate">
+        <div style="background: #f8fafc; border-radius: 28px; padding: 48px; text-align: center;">
+            <h3 style="font-size: 24px; font-weight: 500; margin-bottom: 16px;">Our commitment to real-world impact</h3>
+            <p style="max-width: 700px; margin: 0 auto; color: #4a5b6e;">We don't just learn — we build. Every project, research paper, and SIG initiative is designed to bridge classroom knowledge with industry demands. Founded in 2025, BitLaps continues to push boundaries.</p>
+        </div>
+    </section>
 
-        .slide.active {
-            display: flex;
-            justify-content: center;
-        }
+    <!-- CONTACT SECTION -->
+    <section class="section-corporate" id="contact">
+        <h2 class="section-title">Let's collaborate</h2>
+        <p class="section-subtitle">Interested in working with BitLaps or exploring partnership opportunities?</p>
+        <div class="contact-grid">
+            <div>
+                <div class="contact-info-item">
+                    <h4>📍 Visit us</h4>
+                    <p>The Grove, Mbombela, 1200<br>Eduvos Campus</p>
+                </div>
+                <div class="contact-info-item">
+                    <h4>📞 Call</h4>
+                    <p>+27 13 940 3100</p>
+                </div>
+                <div class="contact-info-item">
+                    <h4>✉️ Email</h4>
+                    <p><a href="mailto:bitlaps@outlook.com" style="color:#0052cc;">info@BitLaps.com</a></p>
+                </div>
+                <div class="mt-4">
+                    <iframe width="100%" height="200" style="border-radius: 20px; border: 0;" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.3829466071526!2d30.97349191548803!3d-25.469308183774705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec530b4f42b367d%3A0x3d17a70a5a0a5f32!2sThe%20Grove%2C%20Mbombela%2C%201200!5e0!3m2!1sen!2sza!4v1614318998829!5m2!1sen!2sza"></iframe>
+                </div>
+            </div>
+            <div>
+                <form id="corporateContactForm" class="contact-form">
+                    <input type="text" name="name" placeholder="Full name" required>
+                    <input type="email" name="email" placeholder="Email address" required>
+                    <textarea name="message" rows="4" placeholder="Tell us about your project or inquiry"></textarea>
+                    <button type="submit" class="btn-primary-corp">Send message →</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-        /* Team Card */
-        .team-card {
-            display: flex;
-            align-items: center;
-            max-width: 700px;
-            width: 100%;
-        }
+    <footer>
+        <img src="images/project/eduvoslogo.png" alt="Eduvos" style="height: 40px; margin-bottom: 16px;">
+        <p>Copyright © 2026 Eduvos · BitLaps. All rights reserved.<br>Bridging Information Technology Learning and Application through Project-based Solutions since 2025.</p>
+    </footer>
 
-        /* Team Image */
-        .team-img {
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 0;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .team-img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Team Info */
-        .team-info {
-            flex: 1;
-            padding-left: 20px;
-            text-align: left;
-        }
-
-        /* Slider Buttons */
-        .prev-btn,
-        .next-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 20px;
-            border-radius: 50%;
-        }
-
-        .prev-btn {
-            left: 10px;
-        }
-
-        .next-btn {
-            right: 10px;
-        }
-
-        .prev-btn:hover,
-        .next-btn:hover {
-            background: rgba(0, 0, 0, 0.8);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .team-card {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .team-info {
-                padding-left: 0;
-                padding-top: 10px;
-            }
-
-            .prev-btn,
-            .next-btn {
-                font-size: 16px;
-                padding: 8px;
-            }
-        }
-
-        /* Projects section styles - WHITE background for slides */
-        #our-projects .slider-container {
-            background: #ffffff;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        #our-projects .slide {
-            background: #ffffff;
-        }
-
-        #our-projects .team-card {
-            background: #ffffff;
-        }
-
-        #our-projects .team-info {
-            background: #ffffff;
-        }
-
-        /* Ensure projects section has proper spacing and independent slider functionality */
-        #our-projects {
-            background: #ffffff;
-        }
-
-        #our-projects .slider-container .prev-btn,
-        #our-projects .slider-container .next-btn {
-            background: rgba(0, 0, 0, 0.4);
-        }
-
-        #our-projects .slider-container .prev-btn:hover,
-        #our-projects .slider-container .next-btn:hover {
-            background: rgba(0, 0, 0, 0.7);
-        }
-    </style>
-
-    <!-- JavaScript for Team Slider -->
     <script>
-        let currentIndex = 0;
-        const slides = document.querySelectorAll("#project .slide");
+        function toggleAccordion(header) {
+            const item = header.closest('.accordion-item-corp');
+            if (!item) return;
+            item.classList.toggle('open');
+        }
 
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.toggle("active", i === index);
+        const contactForm = document.getElementById('corporateContactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = contactForm.querySelector('input[name="name"]').value;
+                const email = contactForm.querySelector('input[name="email"]').value;
+                const message = contactForm.querySelector('textarea[name="message"]').value;
+                const subject = `BitLaps Collaboration - ${name}`;
+                const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${message}`;
+                window.location.href = `mailto:bitlaps@outlook.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+                alert("Thank you. Your message will open in your email client.");
             });
         }
 
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            showSlide(currentIndex);
-        }
-
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % slides.length;
-            showSlide(currentIndex);
-        }
-
-        // Show first slide on load
-        if (slides.length) showSlide(currentIndex);
+        document.querySelectorAll('.nav-links a, .timeline-link').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const hash = this.getAttribute('href');
+                if (hash && hash.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(hash);
+                    if (target) target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
     </script>
-
-    <!-- OUR PROJECTS -->
-    <section class="project py-5" id="our-projects">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2>Our Projects</h2>
-                </div>
-            </div>
-
-            <div class="slider-container">
-                <button class="prev-btn" id="projectPrevBtn">&#10094;</button>
-                <div class="slider" id="projectSlider">
-                    <!-- Project 1 -->
-                    <div class="slide">
-                        <div class="team-card">
-                            <!-- LEFT: Logo acting as link -->
-                            <a href="https://bitlaps.github.io/BitLaps_summary_tool-2026-/" target="_blank">
-                                <img src="images/project/logo.png" width="250" height="250">
-                            </a>
-
-                            <!-- RIGHT: Description -->
-                            <div class="team-info">
-                                <h3>PDF Summarizer</h3>
-                                <p><b>Developed by:</b> Bryan, Saad, McNeil, Khula</p>
-                                <p>
-                                    This web application is designed to provide an efficient and user-friendly
-                                    platform that solves the problem of long PDF files, it summarizes the PDF
-                                    for the user in a selected amount of sentences.
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="slide">
-                        <div class="team-card">
-
-                            <!-- LEFT: Logo acting as link -->
-                            <a href="https://bitlaps.github.io/smart-study/" target="_blank">
-                                <img src="images/project/smart-study-logo.jpg" width="250" height="250">
-                            </a>
-
-                            <!-- RIGHT: Description -->
-                            <div class="team-info">
-                                <h3>Smart study webapp</h3>
-                                <p><b>Developed by:</b> Saad</p>
-                                <p>
-                                    This web application is designed to provide an efficient and user-friendly
-                                    platform that allows the studying process to be fun and more interactive.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="next-btn" id="projectNextBtn">&#10095;</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Separate JavaScript for Projects Slider -->
-    <script>
-        (function () {
-            let projectIndex = 0;
-            const projectSlides = document.querySelectorAll("#our-projects .slide");
-            const prevBtn = document.getElementById("projectPrevBtn");
-            const nextBtn = document.getElementById("projectNextBtn");
-
-            function showProjectSlide(index) {
-                if (!projectSlides.length) return;
-                projectSlides.forEach((slide, i) => {
-                    slide.classList.toggle("active", i === index);
-                });
-            }
-
-            function prevProjectSlide() {
-                projectIndex = (projectIndex - 1 + projectSlides.length) % projectSlides.length;
-                showProjectSlide(projectIndex);
-            }
-
-            function nextProjectSlide() {
-                projectIndex = (projectIndex + 1) % projectSlides.length;
-                showProjectSlide(projectIndex);
-            }
-
-            if (prevBtn && nextBtn && projectSlides.length) {
-                prevBtn.onclick = prevProjectSlide;
-                nextBtn.onclick = nextProjectSlide;
-                // initialize first slide
-                showProjectSlide(0);
-            }
-        })();
-    </script>
-
-    <!-- CONTACT -->
-    <section class="contact py-5" id="contact">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-5 mr-lg-5 col-12">
-                    <div class="google-map w-100">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.3829466071526!2d30.97349191548803!3d-25.469308183774705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec530b4f42b367d%3A0x3d17a70a5a0a5f32!2sThe%20Grove%2C%20Mbombela%2C%201200!5e0!3m2!1sen!2sza!4v1614318998829!5m2!1sen!2sza"
-                            width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-                    </div>
-
-                    <div class="contact-info d-flex justify-content-between align-items-center py-4 px-lg-5">
-                        <div class="contact-info-item">
-                            <h3 class="mb-3 text-white">Talk with us</h3>
-                            <p class="footer-text mb-0">013 940 3100</p>
-                            <!--Edit email destination-->
-                            <p><a href="mailto:bitlaps@outlook.com">Info@bitlaps.com</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-12">
-                    <div class="contact-form">
-                        <h2 class="mb-4">Interested to work together? Let's talk</h2>
-
-                        <form id="contact-form">
-                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-                            <textarea name="message" class="form-control" placeholder="Your Message"
-                                required></textarea>
-                            <button type="submit" class="form-control">Send</button>
-                        </form>
-
-                        <script>
-                            document.getElementById("contact-form").addEventListener("submit", function (event) {
-                                event.preventDefault();
-                                var name = document.querySelector('input[name="name"]').value;
-                                var email = document.querySelector('input[name="email"]').value;
-                                var message = document.querySelector('textarea[name="message"]').value;
-                                var mailtoLink = "mailto:bitlaps@outlook.com?subject=Contact%20Form%20Message&body=Name:%20" + encodeURIComponent(name) + "%0D%0AEmail:%20" + encodeURIComponent(email) + "%0D%0AMessage:%20" + encodeURIComponent(message);
-                                window.location.href = mailtoLink;
-                            });
-                        </script>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- FOOTER -->
-    <footer style="text-align: center;" class="footer py-5">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-12 col-12">
-                    <img id="eduvos_logo" src="images/project/eduvoslogo.png" class="img-fluid" alt="svg image"
-                        width="250" hight="250" align="center">
-                    <p class="copyright-text text-center">Copyright &copy; 2026 Eduvos . All rights reserved</p>
-                </div>
-
-            </div>
-        </div>
-    </footer>
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -789,7 +866,5 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
-
 </body>
-
 </html>
