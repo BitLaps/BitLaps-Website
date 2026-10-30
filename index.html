@@ -339,9 +339,10 @@
         }
 
 
+        /* ==== PROJECTS GRID (UPDATED) ==== */
         .projects-grid-corp {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 32px;
             margin-top: 16px;
         }
@@ -353,12 +354,21 @@
             transition: all 0.2s;
             background: white;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card-corp:hover {
             transform: translateY(-4px);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
             border-color: #d0d9e2;
+        }
+
+        .project-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
         }
 
         .project-icon {
@@ -369,22 +379,78 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
+            color: #0052cc;
         }
 
-        .project-icon img {
-            max-width: 40px;
+        .project-badges {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
+        }
+
+        .status-badge {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-demo {
+            background: rgba(156, 39, 176, 0.12);
+            color: #8e24aa;
+            border: 1px solid rgba(156, 39, 176, 0.35);
+        }
+
+        .status-complete {
+            background: rgba(46, 160, 67, 0.12);
+            color: #1a7f37;
+            border: 1px solid rgba(46, 160, 67, 0.35);
+        }
+
+        .year-badge {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 20px;
+            background: #f0f4f9;
+            color: #5a6e7c;
+            border: 1px solid #e0e6ec;
+            letter-spacing: 0.5px;
         }
 
         .project-card-corp h3 {
             font-size: 20px;
             margin-bottom: 10px;
+            color: #0a2540;
         }
 
-        .project-meta {
-            font-size: 13px;
+        .project-developed {
+            font-size: 12.5px;
+            color: #6c7e8f;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .project-card-corp p.project-description {
+            font-size: 14px;
+            color: #4a5b6e;
+            line-height: 1.55;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .project-link {
             color: #0052cc;
-            margin-top: 16px;
+            font-weight: 500;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
         }
 
    
@@ -759,107 +825,141 @@
         <h2 class="section-title">Our project portfolio</h2>
         <p class="section-subtitle">Real-world applications developed by BitLaps teams, solving genuine industry and academic challenges.</p>
         <div class="projects-grid-corp">
-            <div class="project-card-corp" onclick="window.open('https://bitlaps.github.io/BitLaps_summary_tool-2026-/', '_blank')">
-                <div class="project-icon"><img src="images/project/logo.png" alt="PDF tool" style="width: 36px;"></div>
-                <h3>PDF Summarizer</h3>
-                <p>A tool that condenses lengthy academic and business PDFs into intelligent summaries.</p>
-                <div class="project-meta">JS · Web</div>
+
+            <!-- Innovation Management -->
+            <div class="project-card-corp" onclick="window.open('https://innovation-management.vercel.app/auth', '_blank')">
+                <div class="project-card-header">
+                    <div class="project-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        </svg>
+                    </div>
+                    <div class="project-badges">
+                        <span class="status-badge status-demo">Demo</span>
+                        <span class="year-badge">2025</span>
+                    </div>
+                </div>
+                <h3>Innovation Management</h3>
+                <p class="project-developed">Developed for: 2025 HackJam competitions</p>
+                <p class="project-description">A management platform connecting students for tutoring on campus, with distinct roles for administrators and students to coordinate sessions and academic support.</p>
+                <a class="project-link" href="https://innovation-management.vercel.app/auth" target="_blank" rel="noopener noreferrer">View Project →</a>
             </div>
+
+            <!-- Simple IDE -->
+            <div class="project-card-corp" onclick="window.open('https://bitlapside.vercel.app', '_blank')">
+                <div class="project-card-header">
+                    <div class="project-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </div>
+                    <div class="project-badges">
+                        <span class="status-badge status-complete">Complete</span>
+                        <span class="year-badge">2026</span>
+                    </div>
+                </div>
+                <h3>Simple IDE</h3>
+                <p class="project-developed">Developed for: Students who want an online platform to practice coding</p>
+                <p class="project-description">An online Integrated Development Environment giving students a convenient, browser-based space to practice coding without any local setup.</p>
+                <a class="project-link" href="https://bitlapside.vercel.app" target="_blank" rel="noopener noreferrer">View Project →</a>
+            </div>
+
+            <!-- Smart Study -->
             <div class="project-card-corp" onclick="window.open('https://bitlaps.github.io/smart-study/', '_blank')">
-                <div class="project-icon"><img src="images/project/smart-study-logo.jpg" alt="Smart study" style="width: 36px; border-radius: 8px;"></div>
-                <h3>Smart Study WebApp</h3>
-                <p>Interactive platform with gamified learning, progress tracking, and adaptive flashcards.</p>
-                <div class="project-meta">React</div>
+                <div class="project-card-header">
+                    <div class="project-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                            <path d="M12 7v14"/>
+                        </svg>
+                    </div>
+                    <div class="project-badges">
+                        <span class="status-badge status-complete">Complete</span>
+                        <span class="year-badge">2025</span>
+                    </div>
+                </div>
+                <h3>Smart Study</h3>
+                <p class="project-developed">Developed for: Students who would like a fun and interactive way to study based on their notes</p>
+                <p class="project-description">Smart Study gamifies the learning and studying process, turning a student's own notes into an engaging, interactive experience that makes revision more rewarding.</p>
+                <a class="project-link" href="https://bitlaps.github.io/smart-study/" target="_blank" rel="noopener noreferrer">View Project →</a>
             </div>
+
+            <!-- PDF Summarizer -->
+            <div class="project-card-corp">
+                <div class="project-card-header">
+                    <div class="project-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="8" y1="13" x2="16" y2="13"/>
+                            <line x1="8" y1="17" x2="14" y2="17"/>
+                        </svg>
+                    </div>
+                    <div class="project-badges">
+                        <span class="status-badge status-complete">Complete</span>
+                        <span class="year-badge">2026</span>
+                    </div>
+                </div>
+                <h3>PDF Summarizer</h3>
+                <p class="project-developed">Developed for: Students and professionals who need to digest long documents quickly</p>
+                <p class="project-description">An AI-powered tool that reads PDF documents and produces clear, concise summaries, saving time on lengthy reports, papers and study material.</p>
+            </div>
+
         </div>
     </section>
 
-  
-    <section class="section-corporate">
-        <div style="background: #f8fafc; border-radius: 28px; padding: 48px; text-align: center;">
-            <h3 style="font-size: 24px; font-weight: 500; margin-bottom: 16px;">Our commitment to real-world impact</h3>
-            <p style="max-width: 700px; margin: 0 auto; color: #4a5b6e;">We don't just learn — we build. Every project, research paper, and SIG initiative is designed to bridge classroom knowledge with industry demands. Founded in 2025, BitLaps continues to push boundaries.</p>
-        </div>
-    </section>
 
-
-    <section class="section-corporate" id="contact">
-        <h2 class="section-title">Let's collaborate</h2>
-        <p class="section-subtitle">Interested in working with BitLaps or exploring partnership opportunities?</p>
+    <section class="section-corporate" id="contact" style="border-bottom: none;">
+        <h2 class="section-title">Contact &amp; collaboration</h2>
+        <p class="section-subtitle">Interested in joining BitLaps, partnering on a project, or learning more? Get in touch with us.</p>
         <div class="contact-grid">
             <div>
                 <div class="contact-info-item">
-                    <h4>📍 Visit us</h4>
-                    <p>The Grove, Mbombela, 1200<br>Eduvos Campus</p>
+                    <h4>Location</h4>
+                    <p>Eduvos Mbombela Campus</p>
                 </div>
                 <div class="contact-info-item">
-                    <h4>📞 Call</h4>
-                    <p>+27 13 940 3100</p>
+                    <h4>Email</h4>
+                    <p><a href="mailto:Emmanual.Mordi@eduvos.com" class="project-link">Emmanual.Mordi@eduvos.com</a></p>
                 </div>
                 <div class="contact-info-item">
-                    <h4>✉️ Email</h4>
-                    <p><a href="mailto:bitlaps@outlook.com" style="color:#0052cc;">info@BitLaps.com</a></p>
-                </div>
-                <div class="mt-4">
-                    <iframe width="100%" height="200" style="border-radius: 20px; border: 0;" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.3829466071526!2d30.97349191548803!3d-25.469308183774705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec530b4f42b367d%3A0x3d17a70a5a0a5f32!2sThe%20Grove%2C%20Mbombela%2C%201200!5e0!3m2!1sen!2sza!4v1614318998829!5m2!1sen!2sza"></iframe>
+                    <h4>Code</h4>
+                    <p><a href="https://github.com/BitLaps" target="_blank" rel="noopener noreferrer" class="project-link">github.com/BitLaps</a></p>
                 </div>
             </div>
-            <div>
-                <form id="corporateContactForm" class="contact-form">
-                    <input type="text" name="name" placeholder="Full name" required>
-                    <input type="email" name="email" placeholder="Email address" required>
-                    <textarea name="message" rows="4" placeholder="Tell us about your project or inquiry"></textarea>
-                    <button type="submit" class="btn-primary-corp">Send message →</button>
-                </form>
-            </div>
+            <form class="contact-form" onsubmit="sendContact(event)">
+                <input type="text" id="cf-name" placeholder="Your name" required>
+                <input type="email" id="cf-email" placeholder="Your email" required>
+                <textarea id="cf-message" rows="5" placeholder="How would you like to collaborate?" required></textarea>
+                <button type="submit" class="btn-primary-corp">Send message</button>
+            </form>
         </div>
     </section>
 
+
     <footer>
-        <img src="images/project/eduvoslogo.png" alt="Eduvos" style="height: 40px; margin-bottom: 16px;">
-        <p>Copyright © 2026 Eduvos · BitLaps. All rights reserved.<br>Bridging Information Technology Learning and Application through Project-based Solutions since 2025.</p>
+        <p>&copy; 2025&ndash;2026 BitLaps &middot; Eduvos Mbombela Campus. Bridging IT learning and real-world application.</p>
     </footer>
+
 
     <script>
         function toggleAccordion(header) {
-            const item = header.closest('.accordion-item-corp');
-            if (!item) return;
+            var item = header.parentElement;
             item.classList.toggle('open');
         }
 
-        const contactForm = document.getElementById('corporateContactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const name = contactForm.querySelector('input[name="name"]').value;
-                const email = contactForm.querySelector('input[name="email"]').value;
-                const message = contactForm.querySelector('textarea[name="message"]').value;
-                const subject = `BitLaps Collaboration - ${name}`;
-                const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${message}`;
-                window.location.href = `mailto:bitlaps@outlook.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-                alert("Thank you. Your message will open in your email client.");
-            });
+        function sendContact(e) {
+            e.preventDefault();
+            var name = document.getElementById('cf-name').value;
+            var email = document.getElementById('cf-email').value;
+            var message = document.getElementById('cf-message').value;
+            var subject = encodeURIComponent('BitLaps enquiry from ' + name);
+            var body = encodeURIComponent(message + '\n\nFrom: ' + name + ' (' + email + ')');
+            window.location.href = 'mailto:Emmanual.Mordi@eduvos.com?subject=' + subject + '&body=' + body;
         }
-
-        document.querySelectorAll('.nav-links a, .timeline-link').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const hash = this.getAttribute('href');
-                if (hash && hash.startsWith('#')) {
-                    e.preventDefault();
-                    const target = document.querySelector(hash);
-                    if (target) target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
     </script>
-
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/Headroom.js"></script>
-    <script src="js/jQuery.headroom.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/custom.js"></script>
 </body>
 </html>
